@@ -15,16 +15,16 @@ public class TestCases {
 	@Test
 	public void testForForeignPlayers()
 	{
-		int count=0;
+		int foreignPlayerCount=0;
 		List<String> allPlayersCountry=json.getList("player.country");
 		for(int i=0;i<allPlayersCountry.size();i++)
 		{
 			if(!(allPlayersCountry.get(i).equals("India")))
 			{
-				count++;
+				foreignPlayerCount++;
 			}
 		}
-		assertEquals("Expected foerign players in a team are 4 but are :"+count,4,count);
+		assertEquals("Expected foreign players in a team are 4 but are :"+foreignPlayerCount,4,foreignPlayerCount);
 	}
 	
 	@Test
@@ -39,6 +39,6 @@ public class TestCases {
 				wicketKeeperCount++;
 			}
 		}
-		assertEquals("Expected WicketKeeper in a team are 1 but are :"+wicketKeeperCount,1,wicketKeeperCount);
+		assertTrue("Expected WicketKeeper in a team are atleast 1 but presently there are :"+wicketKeeperCount,wicketKeeperCount>=1);
 	}
 }
