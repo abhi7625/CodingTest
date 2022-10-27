@@ -1,4 +1,4 @@
-package rescources;
+package resources;
 
 public class response {
 
