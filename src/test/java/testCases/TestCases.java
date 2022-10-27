@@ -5,13 +5,16 @@ import java.util.List;
 import org.junit.Test;
 
 import io.restassured.path.json.JsonPath;
-import rescources.response;
+import resources.response;
 
 import static org.junit.Assert.*;
 
 public class TestCases {
 	JsonPath json=new JsonPath(response.responseData());
 
+	
+
+	/*Test case to verify A team consist only 4 Foreign Players*/
 	@Test
 	public void testForForeignPlayers()
 	{
@@ -27,6 +30,7 @@ public class TestCases {
 		assertEquals("Expected foreign players in a team are 4 but are :"+foreignPlayerCount,4,foreignPlayerCount);
 	}
 	
+	/*Test case to verify A team consist atleast 1 WicketKeeper*/
 	@Test
 	public void testForWicketKeeper()
 	{
